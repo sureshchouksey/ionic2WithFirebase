@@ -1,0 +1,28 @@
+<!--
+  Generated template for the PropertyListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+ <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Property List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-item *ngFor="let property of properties" (click)="itemTapped($event, property)">
+       <ion-thumbnail item-left>
+            <img src="{{property.thumb}}"/>
+        </ion-thumbnail>
+        <h2>{{property.title}}</h2>
+        <p>{{property.city}}, {{property.state}} ∙ {{property.price}}</p>
+  </button>
+
+</ion-content>
